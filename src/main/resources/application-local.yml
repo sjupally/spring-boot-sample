@@ -1,0 +1,7 @@
+example:
+  host:
+    name: alldigital.net
+    port: 1234
+  credentials:
+    username: admin
+    password: password

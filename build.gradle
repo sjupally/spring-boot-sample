@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+        mavenCentral()        
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.7.RELEASE")
+    	classpath("net.saliman:gradle-cobertura-plugin:2.2.4")
+    }
+}
+
+// versioning (referenced from versioning.gradle, therefore needs to be first)
+ext.major = 0
+ext.minor = 1
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'spring-boot'
+apply plugin: 'cobertura'
+apply plugin: 'maven'
+
+// make these maven tasks run after everything has been assembled
+install.dependsOn = [assemble]
+uploadArchives.dependsOn = [assemble]
+
+sourceCompatibility = javaVersion
+targetCompatibility = javaVersion
+jar {
+    baseName = 'spring-boot-sample'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("com.netflix.hystrix:hystrix-core:$hystrixVersion")
+    compile("com.netflix.hystrix:hystrix-javanica:$hystrixVersion")
+    compile("com.netflix.hystrix:hystrix-metrics-event-stream:$hystrixVersion")
+    compile("org.projectlombok:lombok:$lombokVersion")
+    // tag::actuator[]
+    compile("org.springframework.boot:spring-boot-starter-actuator")
+    // end::actuator[]
+    // tag::tests[]
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    // end::tests[]
+}
+
+cobertura {
+  coverageFormats = ['xml', 'html']
+}

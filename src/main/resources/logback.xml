@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+<!-- 	<property name="LOG_PATH" value="/var/logs/brevity/"/> -->
+<!-- 	<property name="LOG_FILE" value="/var/logs/brevity/brevity-base.log"/> -->
+	
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+
+	<!-- <logger name="org.springframework.http" level="DEBUG" /> -->
+	<!-- <logger name="org.springframework.web" level="DEBUG" /> -->
+	<!-- <logger name="org.springframework.amqp" level="DEBUG" /> -->
+
+	<logger name="com.srikanth.example" level="INFO" />
+
+</configuration>

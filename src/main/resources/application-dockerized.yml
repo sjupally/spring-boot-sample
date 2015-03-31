@@ -1,0 +1,7 @@
+example:
+  host:
+    name: docker.host
+    port: 1111
+  credentials:
+    username: docker
+    password: password
