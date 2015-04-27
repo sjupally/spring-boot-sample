@@ -16,11 +16,11 @@ import com.srikanth.example.rest.controller.EmployeeResponse;
 public class Test {
 	private static Collection<Employee> emps = new ArrayList<Employee>();
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		Test test = new Test();
 		emps.addAll(test.getEmployees());
 		System.out.println(emps);
-	}
+	}*/
 
 	private Collection<Employee> getEmployees() {
 		EmployeeResponse employeeResponse = new EmployeeResponse();
